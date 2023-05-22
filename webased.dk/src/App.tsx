@@ -1,9 +1,7 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Typography, useTheme } from '@mui/material';
-import createPalette from '@mui/material/styles/createPalette';
 import Header from './Components/Header';
+import MainBody from './Components/MainBody';
 
 
 function App() {
@@ -13,7 +11,7 @@ function App() {
   return (
     <div>
       <Header></Header>
-      <Typography color="primary">Hej</Typography>
+      <MainBody></MainBody>
     </div>
   );
 }

@@ -5,12 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider, createTheme } from '@mui/material';
 
-
-
 let theme = createTheme({
+  typography: {
+    fontSize: 18,
+    fontFamily: [
+      'Source Sans Pro',
+    ].join(','),
+  },
   palette: {
     primary: {
-      main: '#1A36D8',
+      main: '#4D7E3E',
     },
     secondary: {
       main: '#FF560B',
