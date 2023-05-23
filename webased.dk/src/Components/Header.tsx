@@ -5,7 +5,7 @@ import PhoneEnabledIcon from '@mui/icons-material/PhoneEnabled';
 export default function Header() {
     return (
         <Container>
-            <Grid container justifyContent="space-between" alignItems="center" height={80}>
+            <Grid container justifyContent="space-between" alignItems="center" height={80} marginBottom={10}>
                 <Grid item>
                     <Grid container spacing={4} alignItems="stretch">
                         <Grid item>
