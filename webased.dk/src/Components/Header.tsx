@@ -1,19 +1,23 @@
-import { Container, Grid } from '@mui/material'
+import { Button, Container, Grid } from '@mui/material'
 import React from 'react'
-import { Item } from '@mui/material/utils'
+import { } from '@mui/material/utils'
+
+function openApp(){
+  
+}
 
 export default function Header() {
   return (
     <Container>
-        <Grid>
+        <Grid container alignItems="center" justifyContent="space-evenly" spacing={2}>
             <Grid item lg={4}>
-                <Item>Hej</Item>
+              Hej
             </Grid>
             <Grid item lg={4}>
-                <Item>Hej</Item>
+              Hej2
             </Grid>
             <Grid item lg={4}>
-                <Item>Hej</Item>
+              <Button onClick={() => openApp()}>Knap 1</Button>
             </Grid>
         </Grid>
     </Container>
