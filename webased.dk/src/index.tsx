@@ -4,13 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider, createTheme } from '@mui/material';
-
+import { Auth0Provider } from '@auth0/auth0-react';
 
 
 let theme = createTheme({
+  typography: {
+    fontSize: 18,
+    fontFamily: [
+      'Source Sans Pro',
+    ].join(','),
+  },
   palette: {
     primary: {
-      main: '#1A36D8',
+      main: '#4D7E3E',
     },
     secondary: {
       main: '#FF560B',
@@ -27,7 +33,14 @@ const root = ReactDOM.createRoot(
 root.render(
   <ThemeProvider theme={theme}>
     <React.StrictMode>
-      <App />
+      <Auth0Provider 
+        domain='webased.eu.auth0.com'
+        clientId='hCoLXA8BWetOcEplCwNyMUH3bbnNvVK4'
+        authorizationParams={{
+          redirect_uri: window.location.origin
+        }}>
+        <App />
+      </Auth0Provider>
     </React.StrictMode>
   </ThemeProvider>
 );
