@@ -4,8 +4,10 @@ import PhoneEnabledIcon from '@mui/icons-material/PhoneEnabled';
 import ManageAccountsRoundedIcon from '@mui/icons-material/ManageAccountsRounded';
 import { useAuth0 } from "@auth0/auth0-react";
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export default function Header() {
+
+function Header() {
     const LoginButton = () => {
         const { loginWithRedirect } = useAuth0();
         return (
@@ -17,13 +19,13 @@ export default function Header() {
 
     const AccountButton = () => {
         const { isAuthenticated, user } = useAuth0();
-
+        const navigate = useNavigate();
 
         if (isAuthenticated) {
             return (
-                <IconButton size="small" onClick={() => console.log("hej")}>
-                <ManageAccountsRoundedIcon sx={{ fontSize: 30 }} color="primary" />
-            </IconButton>
+                <IconButton size="small" onClick={() => navigate("/profil")}>
+                    <ManageAccountsRoundedIcon sx={{ fontSize: 30 }} color="primary" />
+                </IconButton>
             )
         } else {
             return <LoginButton></LoginButton>
@@ -89,14 +91,14 @@ export default function Header() {
                                 }}
                             >
                                 <Typography sx={{ p: 2 }}><strong>Mail: </strong>lucas@webased.dk </Typography>
-                                <Typography sx={{ p: 2 }}><strong>Telefon: </strong>28456070 </Typography>
-
+                                <Typography sx={{ p: 2 }}><strong>Telefon: </strong> +45 28456070 </Typography>
                             </Popover>
                         </Grid>
                     </Grid>
                 </Grid>
             </Grid>
-
         </Container>
     )
 }
+
+export {Header}
