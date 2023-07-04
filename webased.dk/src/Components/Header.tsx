@@ -73,9 +73,9 @@ function Header() {
                 </Grid>
                 <Grid item>
                     <Grid container spacing={4} alignItems="stretch">
-                        <Grid item>
+                        {/* <Grid item>
                             <AccountButton></AccountButton>
-                        </Grid>
+                        </Grid> */}
                         <Grid item>
                             <IconButton size="small" onClick={handleClick}>
                                 <PhoneEnabledIcon sx={{ fontSize: 30 }} color="primary" />
