@@ -1,34 +1,85 @@
 import { Container, Grid, SvgIcon, Typography } from '@mui/material'
+import "../Stylesheets/MainBody.css";
 import React from 'react'
-import companyLogo from '../svg/logogWname.png'
 import placeholder from '../svg/palceholde.png'
-import gif from '../Extra/gif.gif'
-import { GetShortIntro, GetCompanyLogo } from '../Extra/Extras'
+import { CompanyLogo, ShortIntro } from './Extras'
 
 
-function TopBody(){
-  return(
+function MainBody() {
+  return (
+    <Container maxWidth={false}>
+      <TopRow/>
+      <Spacer/>
+      <SecondRow/>
+      <Spacer/>
+      <ThirdRow/>
+      <Spacer/>
+      <hr></hr>
+      <Spacer/>
+    </Container>
+  )
+}
+
+const TopRow = () => {
+  return (
     <Container>
-      <Grid container justifyContent={'space-around'}>
-        <Grid item textAlign={'start'}>
-          <Typography variant='h4'>
-            Skab dit eget
-          </Typography>
-          <Typography variant='h4' marginTop={-2} color="primary">
-            online footprint
+      <div style={{ height: "8vh" }}></div>
+      <Grid container spacing={5} justifyContent={'space-between'}>
+        <Grid item xs={6} textAlign={'center'}>
+          <CompanyLogo width={500}></CompanyLogo>
+          <Typography variant="h6" >
+            Din partner til at forvandle dit online footprint
           </Typography>
         </Grid>
-        <Grid item>
-          <img src={gif} alt="loading"/>
+        <Grid item xs={6}>
+          <ShortIntro/>
         </Grid>
       </Grid>
     </Container>
   )
 }
 
-function MainBody() {
+const SecondRow = () => {
   return (
-    <TopBody></TopBody>
+    <Container>
+      <ShortIntro/>
+    </Container>
+  )
+}
+
+const ThirdRow = () => {
+  return (
+    <Container>
+      <Grid container rowGap={10} justifyContent={'space-evenly'}>
+        <Grid item>
+          <ProductBox title="Title 1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in viverra lorem. Curabitur pretium sem ac arcu luctus maximus. Pellentesque ullamcorper dui felis, et dignissim purus rutrum sed. Nulla suscipit.</ProductBox>
+        </Grid>
+        <Grid item>
+          <ProductBox title="Title 2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in viverra lorem. Curabitur pretium sem ac arcu luctus maximus. Pellentesque ullamcorper dui felis, et dignissim purus rutrum sed. Nulla suscipit.</ProductBox>
+        </Grid>
+        <Grid item>
+          <ProductBox title="Title 3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in viverra lorem. Curabitur pretium sem ac arcu luctus maximus. Pellentesque ullamcorper dui felis, et dignissim purus rutrum sed. Nulla suscipit.</ProductBox>
+        </Grid>
+      </Grid>
+    </Container>
+  )
+}
+const ProductBox = ({...props}) => {
+  return (
+    <Container className='ProductBox'>
+        <Typography variant='h5'>
+          {props.title}
+        </Typography>
+        <Typography variant='body2'> 
+          {props.children}
+        </Typography>
+    </Container>
+  )
+}
+
+const Spacer = () => {
+  return (
+    <div style={{ height: "8vh" }}></div>
   )
 }
 
