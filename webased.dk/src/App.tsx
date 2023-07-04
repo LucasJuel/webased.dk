@@ -1,10 +1,11 @@
 import './App.css';
-import { Container, Typography, useTheme } from '@mui/material';
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-
-import Header from './Components/Header';
+import { Typography, useTheme } from '@mui/material';
+import { Header } from './Components/Header';
 import MainBody from './Components/MainBody';
 import Body from './Components/Body';
+import SizedBox from './Components/SizedBox';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ProfilePage from './Components/ProfilePage';
 
 
 function App() {
@@ -12,18 +13,23 @@ function App() {
   const theme = useTheme();
 
   return (
-    // <div>
-    //   <Header></Header>
-    //   <MainBody></MainBody>
-    //   <Body></Body>
-    // </div>
     <Router>
-      <Header></Header>
+      <Header />
       <Routes>
-        <Route path='/' element={<StandardPage></StandardPage>}/>
-        <Route path='./' element={<StandardPage></StandardPage>}/>
-        <Route path='./' element={<StandardPage></StandardPage>}/>
+        <Route path="/" element={
+          <div>
+            <MainBody />
+            <SizedBox />
+          </div>
+        }/>
+        <Route path="/profil" element={
+          <div>
+            <ProfilePage/>
+          </div>
+        }/>
+
       </Routes>
+
     </Router>
   );
 }

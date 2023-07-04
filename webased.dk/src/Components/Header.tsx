@@ -127,3 +127,5 @@ export default function Header() {
     </Container>
   );
 }
+
+export {Header}
