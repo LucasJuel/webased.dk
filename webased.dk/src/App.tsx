@@ -4,6 +4,7 @@ import { Header } from './Components/Header';
 import MainBody from './Components/MainBody';
 import Body from './Components/Body';
 import SizedBox from './Components/SizedBox';
+import Footer from './Components/Footer';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ProfilePage from './Components/ProfilePage';
 
@@ -29,16 +30,10 @@ function App() {
         }/>
 
       </Routes>
-
+      <Footer/>
     </Router>
   );
 }
 
-const StandardPage = () => {
-  return(<div>
-    <MainBody></MainBody>
-    <Body></Body>
-  </div>)
-}
 
 export default App;
