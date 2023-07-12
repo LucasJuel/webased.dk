@@ -1,5 +1,8 @@
 import { Button, Container, Grid, Icon, Input, Link, TextField, Typography } from '@mui/material'
 import React, { useState } from 'react'
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
 import { CompanyLogo } from './Extras'
 
 function Footer() {
@@ -32,15 +35,22 @@ function Footer() {
                     <Typography variant='body2'>
                         Follow Us
                     </Typography>
+                    <br></br>
                     <Grid container columnGap={3}>
                         <Grid item>
-                            <Icon>Hej</Icon>
+                            <Link href="#">
+                                <FacebookIcon/>
+                            </Link>
                         </Grid>
                         <Grid item>
-                            <Icon>Hej1</Icon>
+                            <Link href="#">
+                                <TwitterIcon/>
+                            </Link>
                         </Grid>
                         <Grid item>
-                            <Icon>Hej2</Icon>
+                            <Link href="#">
+                                <InstagramIcon/>
+                            </Link>
                         </Grid>
                     </Grid>
                 </Grid>
