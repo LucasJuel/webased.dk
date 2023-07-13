@@ -1,7 +1,8 @@
-import { CardContent, Container, Grid, SvgIcon, Typography, Card } from '@mui/material'
+import { CardContent, Container, Grid, SvgIcon, Typography, Card, CardActionArea, CardMedia, Button, CardActions } from '@mui/material'
 import "../Stylesheets/MainBody.css";
 import React from 'react'
 import placeholder from '../svg/palceholde.png'
+import lifehub from '../svg/iPhone_13_12_Pro_Max_1.png'
 import { CompanyLogo, ShortIntro } from './Extras'
 
 
@@ -83,7 +84,40 @@ const ProductBox = ({...props}) => {
 
 const PrevWork = () => {
   return (
-    <Typography>Hej</Typography>
+    <Container>
+      <Grid container>
+        <Grid item>
+          <WorkBox/>
+        </Grid>
+        <Grid item></Grid>
+        <Grid item></Grid>
+      </Grid>
+    </Container>
+  )
+}
+
+const WorkBox = () => {
+  return (
+    <Card sx={{maxWidth: 345}}>
+      <CardMedia 
+        sx={{ height: 140 }}
+        image='../svg/iPhone_13_12_Pro_Max_1.png'
+        title='LifeHub'
+      />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            Lizard
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+          Lizards are a widespread group of squamate reptiles, with over 6,000
+          species, ranging across all continents except Antarctica
+        </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Share</Button>
+          <Button size="small">Learn More</Button>
+      </CardActions>
+    </Card>
   )
 }
 

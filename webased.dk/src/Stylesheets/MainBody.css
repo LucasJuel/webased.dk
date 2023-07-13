@@ -1,17 +1,12 @@
 .ProductBox{
-    width: 18vw !important;
-    margin: 20px 0 20px 0;
-    padding: 8px;
-    border-radius: 20px;
-    border: solid #4D7E3E 2px;
-    background-color: white;
     box-shadow: -20px 19px 70px -17px rgba(0,0,0,0.5);
     -webkit-box-shadow: -20px 19px 70px -17px rgba(0,0,0,0.5);
     -moz-box-shadow: -20px 19px 70px -17px rgba(0,0,0,0.5);
     transition: cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition-duration: .4s;
+    
 }
 
 .ProductBox:hover{
+    transition-duration: 0.4s;
     transform: scale(110%);
 }
