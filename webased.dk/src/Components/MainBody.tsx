@@ -1,4 +1,4 @@
-import { Container, Grid, SvgIcon, Typography } from '@mui/material'
+import { CardContent, Container, Grid, SvgIcon, Typography, Card } from '@mui/material'
 import "../Stylesheets/MainBody.css";
 import React from 'react'
 import placeholder from '../svg/palceholde.png'
@@ -16,6 +16,7 @@ function MainBody() {
       <Spacer/>
       <hr></hr>
       <Spacer/>
+      <PrevWork/>
     </Container>
   )
 }
@@ -66,14 +67,23 @@ const ThirdRow = () => {
 }
 const ProductBox = ({...props}) => {
   return (
-    <Container className='ProductBox'>
+    <Card sx={{maxWidth: 275}} variant='outlined'>
+      <CardContent>
         <Typography variant='h5'>
           {props.title}
         </Typography>
+        <hr color="primary"></hr>
         <Typography variant='body2'> 
           {props.children}
         </Typography>
-    </Container>
+      </CardContent>
+    </Card>
+  )
+}
+
+const PrevWork = () => {
+  return (
+    <Typography>Hej</Typography>
   )
 }
 

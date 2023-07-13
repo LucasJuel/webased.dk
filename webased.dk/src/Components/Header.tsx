@@ -101,38 +101,38 @@ export default function Header() {
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid item>
-                    <Grid container spacing={4} alignItems="stretch">
-                        <Grid item>
-                            <AccountButton></AccountButton>
-                        </Grid>
-                        <Grid item>
-                            <IconButton size="small" onClick={handleClick}>
-                                <PhoneEnabledIcon sx={{ fontSize: 30 }} color="primary" />
-                            </IconButton>
-                            <Popover
-                                id={id}
-                                open={open}
-                                anchorEl={anchorEl}
-                                onClose={handleClose}
-                                anchorOrigin={{
-                                    vertical: "bottom",
-                                    horizontal: "center",
-                                }}
-                            >
-                                <Typography sx={{ p: 2 }}>
-                                    <strong>Mail: </strong>lucas@webased.dk{" "}
-                                </Typography>
-                                <Typography sx={{ p: 2 }}>
-                                    <strong>Telefon: </strong>28456070{" "}
-                                </Typography>
-                            </Popover>
-                        </Grid>
-                    </Grid>
-                </Grid>
+        <Grid item>
+          <Grid container spacing={4} alignItems="stretch">
+            {/* <Grid item>
+              <AccountButton></AccountButton>
+            </Grid> */}
+            <Grid item>
+              <IconButton size="small" onClick={handleClick}>
+                <PhoneEnabledIcon sx={{ fontSize: 30 }} color="primary" />
+              </IconButton>
+              <Popover
+                id={id}
+                open={open}
+                anchorEl={anchorEl}
+                onClose={handleClose}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "center",
+                }}
+              >
+                <Typography sx={{ p: 2 }}>
+                  <strong>Mail: </strong>lucas@webased.dk{" "}
+                </Typography>
+                <Typography sx={{ p: 2 }}>
+                  <strong>Telefon: </strong>28456070{" "}
+                </Typography>
+              </Popover>
             </Grid>
-        </Container>
-    );
+          </Grid>
+        </Grid>
+      </Grid>
+    </Container>
+  );
 }
 
 export { Header }
