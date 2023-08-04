@@ -91,13 +91,13 @@ export default function Header() {
                             </Button>
                         </Grid>
                         <Grid item>
-                            <Button>Option 1</Button>
+                            <Button>Produkter</Button>
                         </Grid>
                         <Grid item>
-                            <Button>Option 2</Button>
+                            <Button>Om os</Button>
                         </Grid>
                         <Grid item>
-                            <Button>Option 3</Button>
+                            <Button>Kontakt</Button>
                         </Grid>
                     </Grid>
                 </Grid>

@@ -10,3 +10,20 @@
     transition-duration: 0.4s;
     transform: scale(110%);
 }
+
+.cardAnim{
+    transition: transform 0.4s !important;
+}
+
+.cardAnim:hover{
+    transform: scale(110%) !important;
+}
+
+.cardAnim div[role=img]{
+    transition: transform 0.45s !important;
+    transform: scale(110%) !important;
+}
+
+.cardAnim:hover div[role=img]{
+    transform: scale(100%) !important;
+}

@@ -3,7 +3,8 @@ import "../Stylesheets/MainBody.css";
 import React from 'react'
 import placeholder from '../svg/palceholde.png'
 import lifehub from '../svg/iPhone_13_12_Pro_Max_1.png'
-import { CompanyLogo, ShortIntro } from './Extras'
+import afklar from '../svg/afklar.dk.png'
+import { CompanyLogo, ShortIntro, PreviousWorkText, ProductTagline } from './Extras'
 
 
 function MainBody() {
@@ -18,6 +19,8 @@ function MainBody() {
       <hr></hr>
       <Spacer/>
       <PrevWork/>
+      <Spacer/>
+      <hr></hr>
     </Container>
   )
 }
@@ -44,7 +47,7 @@ const TopRow = () => {
 const SecondRow = () => {
   return (
     <Container>
-      <ShortIntro/>
+      <ProductTagline/>
     </Container>
   )
 }
@@ -85,37 +88,61 @@ const ProductBox = ({...props}) => {
 const PrevWork = () => {
   return (
     <Container>
-      <Grid container>
+      <Typography variant='h3' textAlign={"center"}>Tidligere Projekter</Typography>
+      <Spacer/>
+      <PreviousWorkText/>
+      <Spacer/>
+      <Grid container justifyContent={"space-around"}>
         <Grid item>
-          <WorkBox/>
+          <WorkBox 
+            imgPath={lifehub}
+            title="Lifehub"
+            desc="Lifestyle mobile app designet til at give brugeren et overblik over deres dag."
+            buttonLink="https://github.com/DeMoManique/SoftwareProjektJuni"
+            buttonText="Github"
+            />
         </Grid>
-        <Grid item></Grid>
-        <Grid item></Grid>
+        <Grid item>
+        <WorkBox 
+            imgPath={afklar}
+            title="Afklar.dk"
+            desc="afklar.dk er en virksomhed der er målrettet mod at danne et mere professionelt tekst look."
+            buttonLink="https://afklar.dk"
+            buttonText="Gå til"
+            />
+        </Grid>
+        <Grid item>
+        <WorkBox 
+            imgPath={placeholder}
+            title="Modesaxen"
+            desc="Modesaxen er en super hyggelig familie frisørsalon på Valby Langgade"
+            buttonLink="https://modesaxen.dk"
+            buttonText="Under opbygning"
+            />
+        </Grid>
       </Grid>
     </Container>
   )
 }
 
-const WorkBox = () => {
+const WorkBox = ({...props}) => {
   return (
-    <Card sx={{maxWidth: 345}}>
+    <Card sx={{width: 305}} className='cardAnim'>
       <CardMedia 
-        sx={{ height: 140 }}
-        image='../svg/iPhone_13_12_Pro_Max_1.png'
-        title='LifeHub'
+        sx={{ height: 180 }}
+
+        image={props.imgPath}
       />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Lizard
+            {props.title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          {props.desc}
         </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Share</Button>
-          <Button size="small">Learn More</Button>
+          <Button size="small" href={props.buttonLink} target='_blank'>{props.buttonText}</Button>
       </CardActions>
     </Card>
   )
